@@ -23,6 +23,7 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	"github.com/cosmos/cosmos-sdk/codec"
+	"github.com/cosmos/cosmos-sdk/simapp"
 	"github.com/cosmos/cosmos-sdk/snapshots"
 	snapshottypes "github.com/cosmos/cosmos-sdk/snapshots/types"
 	"github.com/cosmos/cosmos-sdk/store/rootmulti"
@@ -40,6 +41,7 @@ var (
 	capKey2 = sdk.NewKVStoreKey("key2")
 
 	interfaceRegistry = testdata.NewTestInterfaceRegistry()
+	encCfg            = simapp.MakeTestEncodingConfig()
 )
 
 type paramStore struct {
@@ -155,6 +157,7 @@ func setupBaseAppWithSnapshots(t *testing.T, blocks uint, blockTxs int, options 
 			middleware.TxHandlerOptions{
 				LegacyRouter:     legacyRouter,
 				MsgServiceRouter: middleware.NewMsgServiceRouter(interfaceRegistry),
+				TxDecoder:        encCfg.TxConfig.TxDecoder(),
 			},
 			func(ctx sdk.Context, tx sdk.Tx, simulate bool) (sdk.Context, error) { return ctx, nil },
 		)
@@ -942,6 +945,7 @@ func TestCheckTx(t *testing.T) {
 			middleware.TxHandlerOptions{
 				LegacyRouter:     legacyRouter,
 				MsgServiceRouter: middleware.NewMsgServiceRouter(interfaceRegistry),
+				TxDecoder:        encCfg.TxConfig.TxDecoder(),
 			},
 			customHandlerTxTest(t, capKey1, counterKey),
 		)
@@ -1002,6 +1006,7 @@ func TestDeliverTx(t *testing.T) {
 			middleware.TxHandlerOptions{
 				LegacyRouter:     legacyRouter,
 				MsgServiceRouter: middleware.NewMsgServiceRouter(interfaceRegistry),
+				TxDecoder:        encCfg.TxConfig.TxDecoder(),
 			},
 			customHandlerTxTest(t, capKey1, anteKey),
 		)
@@ -1064,6 +1069,7 @@ func TestMultiMsgDeliverTx(t *testing.T) {
 			middleware.TxHandlerOptions{
 				LegacyRouter:     legacyRouter,
 				MsgServiceRouter: middleware.NewMsgServiceRouter(interfaceRegistry),
+				TxDecoder:        encCfg.TxConfig.TxDecoder(),
 			},
 			customHandlerTxTest(t, capKey1, anteKey),
 		)
@@ -1144,6 +1150,7 @@ func TestSimulateTx(t *testing.T) {
 			middleware.TxHandlerOptions{
 				LegacyRouter:     legacyRouter,
 				MsgServiceRouter: middleware.NewMsgServiceRouter(interfaceRegistry),
+				TxDecoder:        encCfg.TxConfig.TxDecoder(),
 			},
 			func(ctx sdk.Context, tx sdk.Tx, simulate bool) (sdk.Context, error) { return ctx, nil },
 		)
@@ -1212,6 +1219,7 @@ func TestRunInvalidTransaction(t *testing.T) {
 			middleware.TxHandlerOptions{
 				LegacyRouter:     legacyRouter,
 				MsgServiceRouter: middleware.NewMsgServiceRouter(interfaceRegistry),
+				TxDecoder:        encCfg.TxConfig.TxDecoder(),
 			},
 			func(ctx sdk.Context, tx sdk.Tx, simulate bool) (newCtx sdk.Context, err error) {
 				return
@@ -1329,6 +1337,7 @@ func TestTxGasLimits(t *testing.T) {
 			middleware.TxHandlerOptions{
 				LegacyRouter:     legacyRouter,
 				MsgServiceRouter: middleware.NewMsgServiceRouter(interfaceRegistry),
+				TxDecoder:        encCfg.TxConfig.TxDecoder(),
 			},
 			ante,
 		)
@@ -1408,6 +1417,7 @@ func TestMaxBlockGasLimits(t *testing.T) {
 			middleware.TxHandlerOptions{
 				LegacyRouter:     legacyRouter,
 				MsgServiceRouter: middleware.NewMsgServiceRouter(interfaceRegistry),
+				TxDecoder:        encCfg.TxConfig.TxDecoder(),
 			},
 			ante,
 		)
@@ -1494,6 +1504,7 @@ func TestBaseAppMiddleware(t *testing.T) {
 			middleware.TxHandlerOptions{
 				LegacyRouter:     legacyRouter,
 				MsgServiceRouter: middleware.NewMsgServiceRouter(interfaceRegistry),
+				TxDecoder:        encCfg.TxConfig.TxDecoder(),
 			},
 			customHandlerTxTest(t, capKey1, anteKey),
 		)
@@ -1588,6 +1599,7 @@ func TestGasConsumptionBadTx(t *testing.T) {
 			middleware.TxHandlerOptions{
 				LegacyRouter:     legacyRouter,
 				MsgServiceRouter: middleware.NewMsgServiceRouter(interfaceRegistry),
+				TxDecoder:        encCfg.TxConfig.TxDecoder(),
 			},
 			ante,
 		)
@@ -1642,6 +1654,7 @@ func TestQuery(t *testing.T) {
 			middleware.TxHandlerOptions{
 				LegacyRouter:     legacyRouter,
 				MsgServiceRouter: middleware.NewMsgServiceRouter(interfaceRegistry),
+				TxDecoder:        encCfg.TxConfig.TxDecoder(),
 			},
 			func(ctx sdk.Context, tx sdk.Tx, simulate bool) (newCtx sdk.Context, err error) {
 				store := ctx.KVStore(capKey1)
@@ -1961,7 +1974,10 @@ func TestWithRouter(t *testing.T) {
 		customRouter := &testCustomRouter{routes: sync.Map{}}
 		r := sdk.NewRoute(routeMsgCounter, handlerMsgCounter(t, capKey1, deliverKey))
 		customRouter.AddRoute(r)
-		txHandler := middleware.NewRunMsgsTxHandler(middleware.NewMsgServiceRouter(interfaceRegistry), customRouter)
+		txHandler := middleware.ComposeMiddlewares(
+			middleware.NewRunMsgsTxHandler(middleware.NewMsgServiceRouter(interfaceRegistry), customRouter),
+			middleware.NewTxDecoderMiddleware(encCfg.TxConfig.TxDecoder()),
+		)
 		bapp.SetTxHandler(txHandler)
 	}
 	app := setupBaseApp(t, txHandlerOpt)
