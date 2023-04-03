@@ -7,7 +7,7 @@ require (
 	cosmossdk.io/core v0.6.1-0.20230309163709-87da587416ba
 	cosmossdk.io/depinject v1.0.0-alpha.3
 	cosmossdk.io/errors v1.0.0-beta.7
-	cosmossdk.io/log v0.0.0-20230306220716-5e55f56d39d5
+	cosmossdk.io/log v1.0.0
 	cosmossdk.io/store v0.0.0-20230227103508-bbe7f8a11b44
 	github.com/cometbft/cometbft v0.37.0
 	github.com/cosmos/cosmos-db v1.0.0-rc.1
@@ -120,7 +120,7 @@ require (
 	github.com/magiconair/properties v1.8.7 // indirect
 	github.com/manifoldco/promptui v0.9.0 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
-	github.com/mattn/go-isatty v0.0.17 // indirect
+	github.com/mattn/go-isatty v0.0.18 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.4 // indirect
 	github.com/mimoo/StrobeGo v0.0.0-20210601165009-122bf33a46e0 // indirect
 	github.com/minio/highwayhash v1.0.2 // indirect
