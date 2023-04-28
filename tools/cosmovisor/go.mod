@@ -3,10 +3,10 @@ module cosmossdk.io/tools/cosmovisor
 go 1.20
 
 require (
-	cosmossdk.io/log v0.0.0-20230306220716-5e55f56d39d5
+	cosmossdk.io/log v1.1.0
 	cosmossdk.io/x/upgrade v0.0.0-20230227110325-294ef34f396f
 	github.com/otiai10/copy v1.9.0
-	github.com/rs/zerolog v1.29.0
+	github.com/rs/zerolog v1.29.1
 	github.com/spf13/cobra v1.6.1
 	github.com/stretchr/testify v1.8.2
 )
@@ -104,7 +104,7 @@ require (
 	github.com/linxGnu/grocksdb v1.7.15 // indirect
 	github.com/magiconair/properties v1.8.7 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
-	github.com/mattn/go-isatty v0.0.17 // indirect
+	github.com/mattn/go-isatty v0.0.18 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.4 // indirect
 	github.com/mimoo/StrobeGo v0.0.0-20210601165009-122bf33a46e0 // indirect
 	github.com/mitchellh/go-homedir v1.1.0 // indirect
