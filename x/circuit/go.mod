@@ -7,7 +7,7 @@ require (
 	github.com/cosmos/cosmos-sdk v0.46.0-beta2.0.20230306220716-5e55f56d39d5
 	github.com/cosmos/gogoproto v1.4.6
 	github.com/regen-network/gocuke v0.6.2
-	google.golang.org/grpc v1.53.0
+	google.golang.org/grpc v1.55.0
 	gotest.tools/v3 v3.4.0
 )
 
@@ -94,8 +94,8 @@ require (
 	golang.org/x/net v0.8.0 // indirect
 	golang.org/x/sys v0.6.0 // indirect
 	golang.org/x/text v0.8.0 // indirect
-	google.golang.org/genproto v0.0.0-20230202175211-008b39050e57 // indirect
-	google.golang.org/protobuf v1.29.0 // indirect
+	google.golang.org/genproto v0.0.0-20230306155012-7f2fa6fef1f4 // indirect
+	google.golang.org/protobuf v1.30.0 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
