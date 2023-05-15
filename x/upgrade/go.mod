@@ -9,7 +9,7 @@ require (
 	cosmossdk.io/errors v1.0.0-beta.7
 	cosmossdk.io/log v0.0.0-20230306220716-5e55f56d39d5
 	cosmossdk.io/store v0.0.0-20230227103508-bbe7f8a11b44
-	github.com/cometbft/cometbft v0.37.0
+	github.com/cometbft/cometbft v0.37.1
 	github.com/cosmos/cosmos-db v1.0.0-rc.1
 	github.com/cosmos/cosmos-proto v1.0.0-beta.3
 	github.com/cosmos/cosmos-sdk v0.46.0-beta2.0.20230306220716-5e55f56d39d5
