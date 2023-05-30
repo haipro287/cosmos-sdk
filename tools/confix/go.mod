@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/cosmos/cosmos-sdk v0.46.0-beta2.0.20230306220716-5e55f56d39d5
-	github.com/creachadair/atomicfile v0.2.8
+	github.com/creachadair/atomicfile v0.3.1
 	github.com/creachadair/tomledit v0.0.24
 	github.com/spf13/cobra v1.6.1
 	github.com/spf13/viper v1.15.0
