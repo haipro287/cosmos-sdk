@@ -9,14 +9,14 @@ require (
 	github.com/armon/go-metrics v0.4.1
 	github.com/cometbft/cometbft v0.37.0
 	github.com/confio/ics23/go v0.9.0
-	github.com/cosmos/cosmos-db v1.0.0-rc.1
+	github.com/cosmos/cosmos-db v1.0.0
 	github.com/cosmos/gogoproto v1.4.6
 	github.com/cosmos/iavl v0.21.0-alpha.1
 	github.com/golang/mock v1.6.0
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/hashicorp/golang-lru v0.5.5-0.20210104140557-80c98217689d
-	github.com/spf13/cast v1.5.0
-	github.com/stretchr/testify v1.8.2
+	github.com/spf13/cast v1.5.1
+	github.com/stretchr/testify v1.8.3
 	github.com/tidwall/btree v1.6.0
 	golang.org/x/exp v0.0.0-20230224173230-c95f2b4c22f2
 	google.golang.org/genproto v0.0.0-20230202175211-008b39050e57 // indirect
