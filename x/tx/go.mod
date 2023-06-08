@@ -14,7 +14,7 @@ require (
 	github.com/tendermint/go-amino v0.16.0
 	google.golang.org/protobuf v1.29.0
 	gotest.tools/v3 v3.4.0
-	pgregory.net/rapid v0.5.5
+	pgregory.net/rapid v0.6.2
 )
 
 require (
