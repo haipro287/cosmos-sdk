@@ -10,7 +10,7 @@ require (
 	github.com/cosmos/cosmos-sdk v0.50.0-alpha.0
 	github.com/manifoldco/promptui v0.9.0
 	github.com/pelletier/go-toml/v2 v2.0.8
-	github.com/spf13/cobra v1.7.0
+	github.com/spf13/cobra v1.8.0
 	google.golang.org/grpc v1.55.0
 	google.golang.org/protobuf v1.30.0
 )
