@@ -8,14 +8,14 @@ require (
 	cosmossdk.io/log v1.2.1
 	cosmossdk.io/math v1.2.0
 	github.com/cockroachdb/errors v1.11.1
-	github.com/cockroachdb/pebble v0.0.0-20231102162011-844f0582c2eb
+	github.com/cockroachdb/pebble v1.1.0
 	github.com/cometbft/cometbft v0.38.2
-	github.com/cosmos/cosmos-db v1.0.0
+	github.com/cosmos/cosmos-db v1.0.2
 	github.com/cosmos/gogoproto v1.4.11
 	github.com/cosmos/iavl v1.0.0
 	github.com/cosmos/ics23/go v0.10.0
 	github.com/hashicorp/go-metrics v0.5.3
-	github.com/linxGnu/grocksdb v1.8.10
+	github.com/linxGnu/grocksdb v1.8.12
 	github.com/mattn/go-sqlite3 v1.14.19
 	github.com/stretchr/testify v1.8.4
 	github.com/tidwall/btree v1.7.0
@@ -58,7 +58,7 @@ require (
 	github.com/rogpeppe/go-internal v1.11.0 // indirect
 	github.com/rs/zerolog v1.31.0 // indirect
 	github.com/sasha-s/go-deadlock v0.3.1 // indirect
-	github.com/spf13/cast v1.5.1 // indirect
+	github.com/spf13/cast v1.6.0 // indirect
 	github.com/syndtr/goleveldb v1.0.1-0.20220721030215-126854af5e6d // indirect
 	golang.org/x/crypto v0.17.0 // indirect
 	golang.org/x/net v0.19.0 // indirect
