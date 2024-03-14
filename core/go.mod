@@ -6,7 +6,7 @@ require (
 	cosmossdk.io/api v0.7.2
 	cosmossdk.io/depinject v1.0.0-alpha.4
 	github.com/cosmos/cosmos-proto v1.0.0-beta.3
-	github.com/stretchr/testify v1.8.4
+	github.com/stretchr/testify v1.9.0
 	google.golang.org/grpc v1.60.1
 	google.golang.org/protobuf v1.31.0
 	gotest.tools/v3 v3.5.1
