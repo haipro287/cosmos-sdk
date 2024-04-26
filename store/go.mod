@@ -12,7 +12,7 @@ require (
 	github.com/cometbft/cometbft v0.38.2
 	github.com/cosmos/cosmos-db v1.0.0
 	github.com/cosmos/gogoproto v1.4.11
-	github.com/cosmos/iavl v1.0.0
+	github.com/cosmos/iavl v1.1.2
 	github.com/cosmos/ics23/go v0.10.0
 	github.com/hashicorp/go-metrics v0.5.3
 	github.com/linxGnu/grocksdb v1.8.10
