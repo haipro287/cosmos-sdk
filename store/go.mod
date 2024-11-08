@@ -4,7 +4,7 @@ go 1.22.2
 
 require (
 	cosmossdk.io/errors v1.0.1
-	cosmossdk.io/log v1.3.1
+	cosmossdk.io/log v1.5.0
 	cosmossdk.io/math v1.3.0
 	github.com/cometbft/cometbft v1.0.0-rc1
 	github.com/cometbft/cometbft/api v1.0.0-rc.1
@@ -29,7 +29,11 @@ require (
 require (
 	github.com/DataDog/zstd v1.5.5 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
+	github.com/bytedance/sonic v1.12.3 // indirect
+	github.com/bytedance/sonic/loader v0.2.0 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
+	github.com/cloudwego/base64x v0.1.4 // indirect
+	github.com/cloudwego/iasm v0.2.0 // indirect
 	github.com/cockroachdb/errors v1.11.1 // indirect
 	github.com/cockroachdb/logtags v0.0.0-20230118201751-21c54148d20b // indirect
 	github.com/cockroachdb/pebble v1.1.0 // indirect
@@ -49,6 +53,7 @@ require (
 	github.com/hashicorp/yamux v0.1.1 // indirect
 	github.com/jhump/protoreflect v1.15.3 // indirect
 	github.com/klauspost/compress v1.17.8 // indirect
+	github.com/klauspost/cpuid/v2 v2.0.9 // indirect
 	github.com/kr/pretty v0.3.1 // indirect
 	github.com/kr/text v0.2.0 // indirect
 	github.com/linxGnu/grocksdb v1.8.14 // indirect
@@ -68,6 +73,8 @@ require (
 	github.com/rs/zerolog v1.33.0 // indirect
 	github.com/spf13/cast v1.7.0 // indirect
 	github.com/syndtr/goleveldb v1.0.1-0.20210819022825-2ae1ddf74ef7 // indirect
+	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect
+	golang.org/x/arch v0.0.0-20210923205945-b76863e36670 // indirect
 	golang.org/x/crypto v0.26.0 // indirect
 	golang.org/x/net v0.27.0 // indirect
 	golang.org/x/sys v0.23.0 // indirect
